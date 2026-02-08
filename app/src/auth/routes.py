@@ -10,7 +10,7 @@ from auth.schema import (
 from auth.service import UserService
 from db.database import get_session
 from sqlmodel.ext.asyncio.session import AsyncSession
-from app.src.utils import Tokens, Hash, create_url_safe_token, decode_url_safe_token
+from utils import Tokens, Hash, create_url_safe_token, decode_url_safe_token
 from datetime import timedelta, datetime
 from fastapi.responses import JSONResponse
 from auth.dependencies import (

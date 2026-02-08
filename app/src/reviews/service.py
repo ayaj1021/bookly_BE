@@ -1,8 +1,8 @@
-from app.src.db.models import Reviews
-from app.src.auth.service import UserService
-from app.src.books.service import BookService
+from db.models import Reviews
+from auth.service import UserService
+from books.service import BookService
 from sqlmodel.ext.asyncio.session import AsyncSession
-from app.src.reviews.schema import ReviewCreate
+from reviews.schema import ReviewCreate
 from fastapi import HTTPException, status
 import logging
 

@@ -14,7 +14,7 @@
 
 from passlib.context import CryptContext
 from datetime import timedelta, datetime
-from app.src.config import Config
+from config import Config
 import jwt
 import uuid
 import logging

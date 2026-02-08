@@ -2,8 +2,8 @@ from pydantic import BaseModel, Field
 from datetime import datetime
 import uuid
 from typing import List
-from app.src.books.schemas import Book
-from app.src.reviews.schema import Review
+from books.schemas import Book
+from reviews.schema import Review
 
 
 class UserCreate(BaseModel):

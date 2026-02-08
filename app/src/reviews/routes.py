@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, status
-from app.src.reviews.service import ReviewService
+from reviews.service import ReviewService
 from sqlmodel.ext.asyncio.session import AsyncSession
 from reviews.schema import ReviewCreate, Review
 from auth.dependencies import get_current_user

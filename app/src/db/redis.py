@@ -1,6 +1,6 @@
 from redis.asyncio import Redis
 from redis.exceptions import ConnectionError
-from app.src.config import Config
+from config import Config
 
 
 JTI_EXPIRY = 3600

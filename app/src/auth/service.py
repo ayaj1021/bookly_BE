@@ -1,7 +1,7 @@
-from app.src.db.models import User
+from db.models import User
 from sqlmodel.ext.asyncio.session import AsyncSession
-from app.src.utils import Hash
-from app.src.auth.schema import UserCreate
+from utils import Hash
+from auth.schema import UserCreate
 from sqlmodel import select, desc
 
 
