@@ -1,12 +1,11 @@
-from fastapi import FastAPI, status
-from fastapi.responses import JSONResponse
-from app.src.books.routes import book_router
-from app.src.auth.routes import auth_router
-from app.src.reviews.routes import review_router
+from fastapi import FastAPI
 from contextlib import asynccontextmanager
-from app.src.db.database import init_db
-from app.src.errors import register_all_errors
-from app.src.middleware import register_middleware
+from books.routes import book_router
+from auth.routes import auth_router
+from reviews.routes import review_router
+from db.database import init_db
+from errors import register_all_errors
+from middleware import register_middleware
 
 
 @asynccontextmanager
