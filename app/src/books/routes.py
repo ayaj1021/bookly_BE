@@ -1,11 +1,11 @@
 from fastapi import APIRouter, status, Depends
 from sqlmodel.ext.asyncio.session import AsyncSession
 from typing import List
-from app.src.db.database import get_session
-from app.src.books.schemas import Book, BooksUpdate, BooksCreate, BookDetailsModel
-from app.src.books.service import BookService
-from app.src.auth.dependencies import AccessTokenBearer, RoleChecker
-from app.src.errors import (
+from db.database import get_session
+from books.schemas import Book, BooksUpdate, BooksCreate, BookDetailsModel
+from books.service import BookService
+from auth.dependencies import AccessTokenBearer, RoleChecker
+from errors import (
     BookNotFoundException,
 )
 

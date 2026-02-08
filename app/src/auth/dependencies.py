@@ -1,20 +1,20 @@
 from fastapi.security import HTTPBearer
 from fastapi.security.http import HTTPAuthorizationCredentials
 from fastapi import Request, Depends
-from app.src.utils import Tokens
-from app.src.db.redis import token_in_block_list
-from app.src.db.database import get_session
+from utils import Tokens
+from db.redis import token_in_block_list
+from db.database import get_session
 from sqlmodel.ext.asyncio.session import AsyncSession
-from app.src.auth.service import UserService
+from auth.service import UserService
 from typing import List
-from app.src.db.models import User
-from app.src.errors import (
+from db.models import User
+from errors import (
     InvalidTokenException,
     RefreshTokenRequiredException,
     AccessTokenRequiredException,
     InsufficientPermissionException,
     AccountNotVerifiedException,
-    UserNotFoundException
+    UserNotFoundException,
 )
 
 

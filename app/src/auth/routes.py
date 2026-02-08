@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, status, HTTPException, BackgroundTasks
-from app.src.auth.schema import (
+from auth.schema import (
     UserCreate,
     PasswordResetConfirm,
     UserLogin,
@@ -7,31 +7,31 @@ from app.src.auth.schema import (
     EmailModel,
     PasswordResetRequest,
 )
-from app.src.auth.service import UserService
-from app.src.db.database import get_session
+from auth.service import UserService
+from db.database import get_session
 from sqlmodel.ext.asyncio.session import AsyncSession
 from app.src.utils import Tokens, Hash, create_url_safe_token, decode_url_safe_token
 from datetime import timedelta, datetime
 from fastapi.responses import JSONResponse
-from app.src.auth.dependencies import (
+from auth.dependencies import (
     RefreshTokenBearer,
     AccessTokenBearer,
     get_current_user,
     RoleChecker,
 )
 
-from app.src.mail import mail, create_message
+from mail import mail, create_message
 
-from app.src.errors import (
+from errors import (
     UserAlreadyExistsException,
     InvalidCredentialsException,
     InvalidTokenException,
     UserNotFoundException,
 )
-from app.src.db.redis import add_jti_to_blocklist
-from app.src.config import Config
+from db.redis import add_jti_to_blocklist
+from config import Config
 from fastapi.encoders import jsonable_encoder
-from app.src.celery_tasks import send_email
+from celery_tasks import send_email
 
 
 auth_router = APIRouter()
